@@ -1,0 +1,15 @@
+# Source: cluster-api-aws/templates/aws-machinetemplates-control-plane.yaml
+apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+kind: AWSMachineTemplate
+metadata:
+  name: 8ba57270-08d7-493d-89c5-2be93a1e9745-control-plane
+  namespace: 8ba57270-08d7-493d-89c5-2be93a1e9745
+spec:
+  template:
+    spec:
+      iamInstanceProfile: control-plane.cluster-api-provider-aws.sigs.k8s.io
+      instanceType: t3.medium
+      sshKeyName: tks-seoul
+      rootVolume:
+        size: 20
+        type: gp2
